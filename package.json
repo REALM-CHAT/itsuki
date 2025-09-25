@@ -1,7 +1,7 @@
 {
-  "name": "@itsukichan/baileys",
-  "version": "7.3.2",
-  "description": "WhatsApp API Modification By Itsukiichan",
+  "name": "@hassanfuad/baileys-ios-webview",
+  "version": "7.3.3",
+  "description": "WhatsApp API with Enhanced iOS WebView Support for Interactive Buttons",
   "keywords": [
     "whatsapp",
     "js-whatsapp",
@@ -10,15 +10,18 @@
     "whatsapp-chat",
     "whatsapp-group",
     "automation",
-    "multi-device"
+    "multi-device",
+    "ios-webview",
+    "interactive-buttons",
+    "whiskeySocket-compatible"
   ],
-  "homepage": "https://github.com/Itsukichann/Baileys",
+  "homepage": "https://github.com/hassanfuad/Baileys",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Itsukichann/Baileys.git"
+    "url": "git+ssh://git@github.com/hassanfuad/Baileys.git"
   },
   "license": "MIT",
-  "author": "Itsukichann",
+  "author": "Hassan Fuad",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
