@@ -1,7 +1,7 @@
 {
   "name": "@hassanfuad/baileys-ios-webview",
-  "version": "7.3.4",
-  "description": "WhatsApp API with Enhanced iOS WebView Support for Interactive Buttons",
+  "version": "7.3.5",
+  "description": "WhatsApp Web API with Enhanced iOS WebView Support - Full compatibility with WhiskeySocket's Baileys plus iOS interactive button fixes",
   "keywords": [
     "whatsapp",
     "js-whatsapp",
@@ -13,7 +13,13 @@
     "multi-device",
     "ios-webview",
     "interactive-buttons",
-    "whiskeySocket-compatible"
+    "whiskeySocket-compatible",
+    "baileys",
+    "whatsapp-bot",
+    "cta-url",
+    "open-webview",
+    "native-flow",
+    "ios-compatibility"
   ],
   "homepage": "https://github.com/hassanfuad/Baileys",
   "repository": {
@@ -98,6 +104,6 @@
     "lib": "lib"
   },
   "bugs": {
-    "url": "https://github.com/Itsukichann/Baileys/issues"
+    "url": "https://github.com/hassanfuad/Baileys/issues"
   }
 }

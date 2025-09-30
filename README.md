@@ -1,4 +1,5 @@
 # <div align='center'>Baileys - Typescript/Javascript WhatsApp Web API</div>
+## <div align='center'>🚀 Enhanced iOS WebView Support Edition</div>
 
 <div align="center">
 
@@ -8,20 +9,33 @@
 
 <!-- Badges -->
 <p>
-  <img src="https://img.shields.io/npm/dw/%40itsukichan%2Fbaileys?label=npm&color=%23CB3837" alt="NPM Downloads"/>
-  <img src="https://img.shields.io/github/v/release/itsukichann/baileys?include_prereleases&sort=semver" alt="Latest Release"/>
-  <img src="https://img.shields.io/github/languages/code-size/itsukichann/baileys" alt="Code Size"/>
-  <img src="https://img.shields.io/github/license/itsukichann/baileys" alt="License"/>
-  <img src="https://img.shields.io/github/stars/itsukichann/baileys" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/itsukichann/baileys" alt="Forks"/>
-</p>
-
-<!-- GitHub Stats -->
-<p>
-  <img src="https://github-readme-stats.vercel.app/api?username=itsukichann&show_icons=true&theme=radical" alt="GitHub Stats"/>
+  <img src="https://img.shields.io/npm/dw/%40hassanfuad%2Fbaileys-ios-webview?label=npm&color=%23CB3837" alt="NPM Downloads"/>
+  <img src="https://img.shields.io/github/v/release/hassanfuad/baileys?include_prereleases&sort=semver" alt="Latest Release"/>
+  <img src="https://img.shields.io/github/languages/code-size/hassanfuad/baileys" alt="Code Size"/>
+  <img src="https://img.shields.io/github/license/hassanfuad/baileys" alt="License"/>
+  <img src="https://img.shields.io/github/stars/hassanfuad/baileys" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/hassanfuad/baileys" alt="Forks"/>
 </p>
 
 </div>
+
+## 🎯 What's New in This Edition
+
+This enhanced version of Baileys includes **full iOS WebView support** for interactive buttons, solving the long-standing issue where `open_webview` and `cta_url` buttons didn't work properly on iOS devices.
+
+### ✨ Key Features
+- 🍎 **iOS WebView Compatibility**: Interactive buttons now work seamlessly on iOS
+- 🔄 **100% WhiskeySocket Compatible**: Drop-in replacement for the original Baileys
+- 🚀 **Enhanced Interactive Messages**: Support for `cta_url`, `open_webview`, and `nativeFlowMessage`
+- 📱 **Cross-Platform**: Works perfectly on both Android and iOS
+- 🛠️ **Helper Functions**: Easy-to-use functions for creating iOS-compatible messages
+
+### 🔧 iOS WebView Fixes
+- ✅ `cta_url` buttons open in WhatsApp's internal browser on iOS
+- ✅ `open_webview` buttons work correctly on iOS devices
+- ✅ Proper `messageParamsJson` generation for iOS compatibility
+- ✅ Automatic `landing_page_url` and `webview_interaction` handling
+- ✅ Native flow message support with tap target configuration
 
 ### Important Note
 
@@ -53,25 +67,56 @@ To run the example script, download or clone the repo and then type the followin
 
 ## Install
 
-Use the stable version:
-```
-yarn add @itsukichan/baileys
+### 📦 NPM Installation
+
+Use the stable version with iOS WebView support:
+```bash
+npm install @hassanfuad/baileys-ios-webview
 ```
 
-Use the edge version (no guarantee of stability, but latest fixes + features)
-```
-yarn add github:Itsukichann/Baileys
+Or with yarn:
+```bash
+yarn add @hassanfuad/baileys-ios-webview
 ```
 
-Then import your code using:
-```ts 
-import makeWASocket from '@itsukichan/baileys'
+### 🔧 Import and Usage
+
+```typescript
+import makeWASocket from '@hassanfuad/baileys-ios-webview'
+
+// For iOS WebView helper functions
+import { createIOSWebviewMessage, createWebviewButton } from '@hassanfuad/baileys-ios-webview'
+```
+
+### 🚀 Quick Start with iOS WebView
+
+```javascript
+const { createIOSWebviewMessage, createWebviewButton } = require('@hassanfuad/baileys-ios-webview');
+
+// Create a webview button that works on iOS
+const webviewButton = createWebviewButton({
+    text: "Open Website",
+    url: "https://example.com",
+    webviewInteraction: true
+});
+
+// Create the complete message
+const message = createIOSWebviewMessage({
+    bodyText: "Click the button below to open the website",
+    footerText: "Powered by Baileys iOS WebView",
+    buttons: [webviewButton]
+});
+
+// Send the message
+await sock.sendMessage('recipient@s.whatsapp.net', message);
 ```
 
 # Links
 
-- [Discord](https://discord.gg/nqssuNjjSH)
-- [Docs](https://guide.whiskeysockets.io/)
+- [GitHub Repository](https://github.com/hassanfuad/Baileys)
+- [NPM Package](https://www.npmjs.com/package/@hassanfuad/baileys-ios-webview)
+- [iOS WebView Documentation](https://github.com/hassanfuad/Baileys/blob/master/README-iOS-Webview.md)
+- [Original Baileys by WhiskeySocket](https://github.com/WhiskeySockets/Baileys)
 
 # Index
 
@@ -224,7 +269,7 @@ WhatsApp provides a multi-device API that allows Baileys to be authenticated as 
 > You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://baileys.whiskeysockets.io/types/BrowsersMap.html)**
 
 ```ts
-import makeWASocket from '@itsukichan/baileys'
+import makeWASocket from '@hassanfuad/baileys-ios-webview'
 
 const suki = makeWASocket({
     // can provide additional config here
@@ -244,7 +289,7 @@ If the connection is successful, you will see a QR code printed on your terminal
 The phone number can't have `+` or `()` or `-`, only numbers, you must provide country code
 
 ```ts
-import makeWASocket from '@itsukichan/baileys'
+import makeWASocket from '@hassanfuad/baileys-ios-webview'
 
 const suki = makeWASocket({
     // can provide additional config here
@@ -317,7 +362,7 @@ You obviously don't want to keep scanning the QR code every time you want to con
 
 So, you can load the credentials to log back in:
 ```ts
-import makeWASocket, { useMultiFileAuthState } from '@itsukichan/baileys'
+import makeWASocket, { useMultiFileAuthState } from '@hassanfuad/baileys-ios-webview'
 
 const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
 
@@ -357,7 +402,7 @@ suki.ev.on('messages.upsert', ({ messages }) => {
 > This example includes basic auth storage too
 
 ```ts
-import makeWASocket, { DisconnectReason, useMultiFileAuthState } from '@itsukichan/baileys'
+import makeWASocket, { DisconnectReason, useMultiFileAuthState } from '@hassanfuad/baileys-ios-webview'
 import { Boom } from '@hapi/boom'
 
 async function connectToWhatsApp () {
@@ -398,7 +443,7 @@ connectToWhatsApp()
 
 ### For example if you use useSingleFileAuthState and useMongoFileAuthState
 ```ts
-import makeWASocket, { useSingleFileAuthState, useMongoFileAuthState } from '@itsukichan/baileys'
+import makeWASocket, { useSingleFileAuthState, useMongoFileAuthState } from '@hassanfuad/baileys-ios-webview'
 
 // Single Auth
 const { state, saveState } = await useSingleFileAuthState('./auth_info_baileys.json') 
@@ -423,7 +468,7 @@ const connectAuth = async() => {
     })
 }
   await client.connect()
-  const collection = client.db("@itsukichann").collection("sessions")
+  const collection = client.db("@hassanfuad/baileys-ios-webview").collection("sessions")
   return collection
 }
 
@@ -445,9 +490,9 @@ suki.ev.on('creds.update', saveCreds)
 - By default poll votes are encrypted and handled in `messages.update`
 ```ts
 import pino from "pino"
-import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@itsukichan/baileys'
+import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@hassanfuad/baileys-ios-webview'
 
-const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@Itsukichann" })
+const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@hassanfuad/baileys-ios-webview" })
 logger.level = "fatal"
 const store = makeInMemoryStore({ logger })
 
@@ -494,7 +539,7 @@ suki.ev.on("messages.update", async (chatUpdate) => {
 It can be used as follows:
 
 ```ts
-import makeWASocket, { makeInMemoryStore } from '@itsukichan/baileys'
+import makeWASocket, { makeInMemoryStore } from '@hassanfuad/baileys-ios-webview'
 // the store maintains the data of the WA connection in memory
 // can be written out to a file & read from it
 const store = makeInMemoryStore({ })
@@ -2054,7 +2099,7 @@ await suki.sendMessage(jid, {
 If you want to save the media you received
 ```ts
 import { createWriteStream } from 'fs'
-import { downloadMediaMessage, getContentType } from '@itsukichan/baileys'
+import { downloadMediaMessage, getContentType } from '@hassanfuad/baileys-ios-webview'
 
 suki.ev.on('messages.upsert', async ({ [m] }) => {
     if (!m.message) return // if there is no text or media message
