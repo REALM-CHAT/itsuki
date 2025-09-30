@@ -1,6 +1,6 @@
 {
   "name": "@hassanfuad/baileys-ios-webview",
-  "version": "7.3.5",
+  "version": "7.3.6",
   "description": "WhatsApp Web API with Enhanced iOS WebView Support - Full compatibility with WhiskeySocket's Baileys plus iOS interactive button fixes",
   "keywords": [
     "whatsapp",
@@ -21,10 +21,10 @@
     "native-flow",
     "ios-compatibility"
   ],
-  "homepage": "https://github.com/hassanfuad/Baileys",
+  "homepage": "https://github.com/REALM-CHAT/itsuki",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/hassanfuad/Baileys.git"
+    "url": "git+ssh://git@github.com/REALM-CHAT/itsuki.git"
   },
   "license": "MIT",
   "author": "Hassan Fuad",
@@ -104,6 +104,6 @@
     "lib": "lib"
   },
   "bugs": {
-    "url": "https://github.com/hassanfuad/Baileys/issues"
+    "url": "https://github.com/REALM-CHAT/itsuki/issues"
   }
 }
